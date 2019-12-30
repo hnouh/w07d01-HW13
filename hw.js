@@ -17,11 +17,17 @@ var swapCase = function(string) {
 // see if you can use Ascii code to acomplish this
 // ex. shiftLetters('hello') // => 'ifmmp'
 // ex. (shiftLetters('abcxyz') // => "bcdyz{"
-var shiftLetters = function(string) {
-  // code!
+var shiftLetters = (string) => {
+  
+for (var i = 0; i < string.length; i++) {
+  newChar=string.charCodeAt(i)
+  newChar2=String.fromCharCode(newChar+1)
+  console.log(newChar2)
+}
 };
 
-
+shiftLetters('hello');
+shiftLetters('abcxyz');
 
 
 // PART 2: USE FOREACH IN THE FOLLOWING EXCERCISES
@@ -47,6 +53,14 @@ var shiftLetters = function(string) {
 // - 2 of diamonds
 // - 3 of diamonds 
 
+arr1=["clubs","diamonds","spades","hearts"]
+arr2=["ace",1,2,3,4,5,6,7,8,9,"jack","queen","king"]
+arr2.forEach(function(element) {
+arr1.forEach(function(element2){
+    console.log(element+" of "+element2);
+})
+});
+
 
 // B) Word Play
 // Create a form where users may enter a sentence.
@@ -54,6 +68,18 @@ var shiftLetters = function(string) {
 // Then, loop through this array to build a new array out of every word in the sentence that is 3 or more characters in length.
 // Finally, reverse the order of the new array, join it back together into a string, and display it to the user.
 
+newArr=[];
+var WordPlay = (string) => {
+  newS=string.split(" ")
+  newS.forEach(function(element){
+    if(element.length>=3){
+      newArr.push(element)
+      reverseNewArr=newArr.reverse();
+    }
+})
+console.log(newArr)
+console.log(reverseNewArr.join())
+};
 
 
-
+WordPlay("hi , hanin")
